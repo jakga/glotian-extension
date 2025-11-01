@@ -1,0 +1,456 @@
+/**
+ * Legacy CSS Compatibility Layer
+ *
+ * This file provides compatibility styles for components that haven't been
+ * migrated to Tailwind yet. It bridges old CSS classes with Tailwind tokens.
+ */
+
+/* Summarize Tab */
+.summarize-tab {
+  @apply flex flex-col gap-4;
+}
+
+.summarize-controls {
+  @apply card p-4 flex flex-col gap-3;
+}
+
+.cefr-selector {
+  @apply flex flex-col gap-2;
+}
+
+.cefr-selector label {
+  @apply flex flex-col gap-1;
+}
+
+.label-text {
+  @apply section-label;
+}
+
+.label-description {
+  @apply text-xs text-glotian-text-secondary italic;
+}
+
+.cefr-selector select {
+  @apply input-base;
+}
+
+.primary-button {
+  @apply btn-primary w-full flex items-center justify-center gap-2;
+}
+
+.secondary-button {
+  @apply btn-secondary w-full flex items-center justify-center gap-2;
+}
+
+.progress-section {
+  @apply card p-6 flex flex-col items-center gap-3;
+}
+
+.progress-spinner {
+  @apply spinner;
+}
+
+.progress-bar {
+  @apply w-full h-2 bg-glotian-border rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-glotian-gradient transition-all duration-300;
+  width: 0%;
+}
+
+.error-section {
+  @apply card p-4 bg-red-50 border-red-200 flex items-start gap-3;
+}
+
+.error-section svg {
+  @apply text-glotian-error flex-shrink-0;
+}
+
+.error-section p {
+  @apply text-sm text-glotian-error;
+}
+
+.results-section {
+  @apply card overflow-hidden;
+}
+
+.result-tabs {
+  @apply flex border-b border-glotian-border bg-white;
+}
+
+.result-tab {
+  @apply flex-1 px-4 py-3 text-sm font-medium text-glotian-text-secondary;
+  @apply border-b-2 border-transparent transition-all;
+  @apply hover:text-glotian-primary hover:bg-glotian-primary/5;
+}
+
+.result-tab.active {
+  @apply text-glotian-primary border-glotian-primary;
+}
+
+.result-content {
+  @apply p-4 custom-scrollbar;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.result-pane {
+  @apply hidden;
+}
+
+.result-pane.active {
+  @apply block;
+}
+
+.content-text {
+  @apply text-sm leading-relaxed text-glotian-text-primary whitespace-pre-wrap;
+}
+
+.result-actions {
+  @apply p-4 border-t border-glotian-border bg-glotian-bg-light;
+  @apply flex flex-col gap-2;
+}
+
+.empty-state {
+  @apply card p-8 flex flex-col items-center justify-center text-center gap-4;
+}
+
+.empty-state svg {
+  @apply text-glotian-text-tertiary opacity-50;
+}
+
+.empty-state h3 {
+  @apply text-base font-semibold text-glotian-text-primary;
+}
+
+.empty-state p {
+  @apply text-sm text-glotian-text-secondary max-w-xs;
+}
+
+/* Q&A Tab */
+.qa-tab {
+  @apply flex flex-col gap-4 h-full;
+}
+
+.qa-messages {
+  @apply flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4;
+}
+
+.qa-message {
+  @apply flex gap-3;
+}
+
+.qa-message.user {
+  @apply flex-row-reverse;
+}
+
+.message-avatar {
+  @apply w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-medium;
+}
+
+.qa-message.user .message-avatar {
+  @apply bg-glotian-primary text-white;
+}
+
+.qa-message.assistant .message-avatar {
+  @apply bg-glotian-secondary text-white;
+}
+
+.message-content {
+  @apply card p-3 max-w-md;
+}
+
+.qa-message.user .message-content {
+  @apply bg-glotian-primary text-white;
+}
+
+.message-text {
+  @apply text-sm leading-relaxed;
+}
+
+.qa-input-section {
+  @apply border-t border-glotian-border p-4 bg-white;
+}
+
+.qa-input-wrapper {
+  @apply flex gap-2;
+}
+
+.qa-input-wrapper textarea {
+  @apply input-base flex-1 resize-none;
+  min-height: 60px;
+}
+
+.qa-input-wrapper button {
+  @apply btn-primary px-4 self-end;
+}
+
+/* Media Tab */
+.media-container {
+  @apply space-y-6;
+}
+
+.media-section {
+  @apply card p-5;
+}
+
+.media-section h2 {
+  @apply text-base font-semibold text-glotian-text-primary mb-2;
+}
+
+.section-description {
+  @apply text-sm text-glotian-text-secondary mb-4;
+}
+
+.upload-area {
+  @apply border-2 border-dashed border-glotian-border rounded-lg p-8;
+  @apply flex flex-col items-center justify-center gap-3;
+  @apply cursor-pointer transition-all;
+  @apply hover:border-glotian-primary hover:bg-glotian-primary/5;
+}
+
+.upload-icon {
+  @apply text-4xl text-glotian-text-tertiary;
+}
+
+.upload-area p {
+  @apply text-sm text-glotian-text-secondary;
+}
+
+.upload-hint {
+  @apply text-xs text-glotian-text-tertiary;
+}
+
+.recording-controls {
+  @apply flex gap-3 flex-wrap;
+}
+
+.btn-record, .btn-stop {
+  @apply px-5 py-3 rounded-full font-medium text-sm;
+  @apply flex items-center gap-2 transition-all;
+}
+
+.btn-record {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
+
+.btn-stop {
+  @apply bg-gray-600 text-white hover:bg-gray-700;
+}
+
+.recording-timer {
+  @apply flex items-center gap-2 px-4 py-2 bg-red-500 text-white;
+  @apply rounded-full font-mono text-sm animate-pulse;
+}
+
+.result-area {
+  @apply mt-5 p-4 bg-glotian-bg-light rounded-lg;
+}
+
+.result-header {
+  @apply flex items-center justify-between mb-3;
+}
+
+.result-header h3 {
+  @apply text-sm font-semibold;
+}
+
+.confidence-badge, .language-badge {
+  @apply badge badge-primary;
+}
+
+.result-text {
+  @apply p-3 bg-white border border-glotian-border rounded text-sm;
+  @apply leading-relaxed whitespace-pre-wrap max-h-72 overflow-y-auto;
+  @apply custom-scrollbar mb-3;
+}
+
+.result-actions {
+  @apply flex gap-2 flex-wrap;
+}
+
+.audio-player {
+  @apply mb-3;
+}
+
+.audio-player audio {
+  @apply w-full;
+}
+
+.processing-indicator {
+  @apply flex flex-col items-center gap-3 p-8 text-center;
+}
+
+/* Activity Tab */
+.activity-container {
+  @apply space-y-4;
+}
+
+.sync-status-header {
+  @apply card p-4 bg-gradient-to-br from-purple-500 to-purple-700 text-white;
+}
+
+.sync-status-indicator {
+  @apply flex items-center gap-2 text-base font-semibold mb-3;
+}
+
+.status-dot {
+  @apply w-3 h-3 rounded-full;
+}
+
+.status-dot[data-status="synced"] {
+  @apply bg-green-400 shadow-lg shadow-green-400/50;
+}
+
+.status-dot[data-status="pending"] {
+  @apply bg-yellow-400 shadow-lg shadow-yellow-400/50 animate-pulse;
+}
+
+.status-dot[data-status="failed"] {
+  @apply bg-red-400 shadow-lg shadow-red-400/50;
+}
+
+.sync-counts {
+  @apply flex gap-3 flex-wrap;
+}
+
+.count-badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+  @apply backdrop-blur-sm;
+}
+
+.count-badge[data-status="pending"] {
+  @apply bg-yellow-400/30;
+}
+
+.count-badge[data-status="synced"] {
+  @apply bg-green-400/30;
+}
+
+.count-badge[data-status="failed"] {
+  @apply bg-red-400/30;
+}
+
+.sync-time {
+  @apply text-xs opacity-90;
+}
+
+.sync-controls {
+  @apply flex gap-3 mt-3;
+}
+
+.sync-button {
+  @apply btn-primary flex-1;
+}
+
+.sync-button.secondary {
+  @apply btn-secondary;
+}
+
+.activity-filters {
+  @apply flex gap-2 flex-wrap;
+}
+
+.filter-select {
+  @apply input-base flex-1 min-w-[120px];
+}
+
+.activity-list {
+  @apply space-y-3;
+}
+
+.activity-item {
+  @apply card card-hover p-4;
+}
+
+.activity-item.conflict-item {
+  @apply border-l-4 border-yellow-500 bg-yellow-50;
+}
+
+.activity-icon {
+  @apply text-2xl flex-shrink-0 w-8 h-8 flex items-center justify-center;
+}
+
+.activity-content {
+  @apply flex-1;
+}
+
+.activity-header {
+  @apply flex items-center justify-between gap-3 mb-2;
+}
+
+.activity-action {
+  @apply text-sm font-semibold text-glotian-text-primary;
+}
+
+.sync-badge {
+  @apply badge text-[10px] uppercase tracking-wide;
+}
+
+.sync-badge.pending {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.sync-badge.synced {
+  @apply bg-green-100 text-green-800;
+}
+
+.sync-badge.failed {
+  @apply bg-red-100 text-red-800;
+}
+
+.activity-details {
+  @apply space-y-2;
+}
+
+.activity-time {
+  @apply text-xs text-glotian-text-secondary;
+}
+
+.activity-meta {
+  @apply flex gap-3 flex-wrap;
+}
+
+.meta-item {
+  @apply text-xs text-glotian-text-tertiary flex items-center gap-1;
+}
+
+.divider {
+  @apply text-xs text-glotian-text-tertiary text-center my-5 relative;
+}
+
+.divider::before,
+.divider::after {
+  @apply absolute top-1/2 w-[calc(50%-30px)] h-px bg-glotian-border;
+  content: '';
+}
+
+.divider::before {
+  @apply left-0;
+}
+
+.divider::after {
+  @apply right-0;
+}
+
+/* Warning banner */
+.warning-banner {
+  @apply card p-4 bg-yellow-50 border-yellow-200 flex gap-3;
+}
+
+.warning-icon {
+  @apply text-2xl flex-shrink-0;
+}
+
+.warning-content h3 {
+  @apply text-sm font-semibold mb-1;
+}
+
+.warning-content p {
+  @apply text-xs text-glotian-text-secondary mb-1;
+}
+
+.warning-link {
+  @apply text-xs text-glotian-primary font-medium hover:underline;
+}
