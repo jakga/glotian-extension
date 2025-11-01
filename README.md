@@ -105,13 +105,13 @@ npm run build
 
 - **Framework**: Chrome Extension Manifest V3 + TypeScript 5.9
 - **Build**: Vite + CRXJS (HMR support)
-- **AI**: Chrome Built-in AI (Translator, Summarizer, Prompt, Writer)
+- **AI**: Chrome Built-in AI (Translator, Summarizer, Prompt, Writer, Rewriter, Proofreader)
 - **Fallback**: Gemini API + OpenAI API (when on-device unavailable)
 - **Backend**: Supabase (PostgreSQL, Auth, Storage)
 - **Storage**: IndexedDB (Dexie.js) for offline-first sync
 - **Styling**: Tailwind CSS
 
-### Chrome Built-in AI APIs Used
+### Chrome Built-in AI APIs Used (6 APIs)
 
 | API | Usage | Performance |
 |-----|-------|-------------|
@@ -119,6 +119,8 @@ npm run build
 | **Summarizer API** | Page content summarization | <2.5s for 5,000 chars |
 | **Prompt API** | Auto-tagging with context awareness | <1.5s |
 | **Writer API** | Text simplification (CEFR A1-C2 levels) | <2s |
+| **Rewriter API** | Tone adjustment (formal/casual) | <1.8s |
+| **Proofreader API** | Grammar checking | <2s |
 
 ### Data Flow
 
