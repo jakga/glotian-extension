@@ -1,0 +1,117 @@
+{
+  "extensionName": {
+    "message": "Glotian - 자연스럽게 언어 학습하기"
+  },
+  "extensionDescription": {
+    "message": "AI 기반 도구로 웹 콘텐츠를 즉시 캡처, 번역 및 학습하세요."
+  },
+  "captureTextCommand": {
+    "message": "선택한 텍스트 캡처 및 번역"
+  },
+  "summarizePageCommand": {
+    "message": "현재 페이지 요약"
+  },
+  "writingCoachCommand": {
+    "message": "작문 코치 열기"
+  },
+  "openSidePanelCommand": {
+    "message": "사이드 패널 열기"
+  },
+  "contextMenuCapture": {
+    "message": "Glotian에 저장"
+  },
+  "captureButton": {
+    "message": "캡처"
+  },
+  "translateButton": {
+    "message": "번역"
+  },
+  "saveButton": {
+    "message": "저장"
+  },
+  "cancelButton": {
+    "message": "취소"
+  },
+  "loginButton": {
+    "message": "로그인"
+  },
+  "logoutButton": {
+    "message": "로그아웃"
+  },
+  "settingsButton": {
+    "message": "설정"
+  },
+  "syncNowButton": {
+    "message": "지금 동기화"
+  },
+  "createFlashcardsButton": {
+    "message": "플래시카드 만들기"
+  },
+  "viewNoteButton": {
+    "message": "노트 보기"
+  },
+  "tabCapture": {
+    "message": "캡처"
+  },
+  "tabSummarize": {
+    "message": "요약"
+  },
+  "tabQA": {
+    "message": "질의응답"
+  },
+  "tabMedia": {
+    "message": "미디어"
+  },
+  "tabActivity": {
+    "message": "활동"
+  },
+  "statusOnline": {
+    "message": "온라인"
+  },
+  "statusOffline": {
+    "message": "오프라인"
+  },
+  "statusSyncing": {
+    "message": "동기화 중..."
+  },
+  "statusSynced": {
+    "message": "동기화됨"
+  },
+  "statusPending": {
+    "message": "동기화 대기 중"
+  },
+  "statusFailed": {
+    "message": "동기화 실패"
+  },
+  "translationPlaceholder": {
+    "message": "페이지의 텍스트를 선택하고 $SHORTCUT$를 눌러 번역하고 저장하세요.",
+    "placeholders": {
+      "shortcut": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorGeneric": {
+    "message": "오류가 발생했습니다. 다시 시도해주세요."
+  },
+  "errorNetwork": {
+    "message": "네트워크 오류입니다. 연결을 확인해주세요."
+  },
+  "errorAuth": {
+    "message": "인증 실패. 다시 로그인해주세요."
+  },
+  "errorTranslation": {
+    "message": "번역 실패. 다시 시도해주세요."
+  },
+  "successNoteSaved": {
+    "message": "노트가 성공적으로 저장되었습니다!"
+  },
+  "successSynced": {
+    "message": "$COUNT$개 항목이 동기화되었습니다.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  }
+}

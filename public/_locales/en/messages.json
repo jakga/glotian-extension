@@ -1,0 +1,117 @@
+{
+  "extensionName": {
+    "message": "Glotian - Learn Languages Naturally"
+  },
+  "extensionDescription": {
+    "message": "Capture, translate, and learn from any web content instantly using AI-powered tools."
+  },
+  "captureTextCommand": {
+    "message": "Capture and translate selected text"
+  },
+  "summarizePageCommand": {
+    "message": "Summarize current page"
+  },
+  "writingCoachCommand": {
+    "message": "Open writing coach"
+  },
+  "openSidePanelCommand": {
+    "message": "Open side panel"
+  },
+  "contextMenuCapture": {
+    "message": "Save to Glotian"
+  },
+  "captureButton": {
+    "message": "Capture"
+  },
+  "translateButton": {
+    "message": "Translate"
+  },
+  "saveButton": {
+    "message": "Save"
+  },
+  "cancelButton": {
+    "message": "Cancel"
+  },
+  "loginButton": {
+    "message": "Log In"
+  },
+  "logoutButton": {
+    "message": "Log Out"
+  },
+  "settingsButton": {
+    "message": "Settings"
+  },
+  "syncNowButton": {
+    "message": "Sync Now"
+  },
+  "createFlashcardsButton": {
+    "message": "Create Flashcards"
+  },
+  "viewNoteButton": {
+    "message": "View Note"
+  },
+  "tabCapture": {
+    "message": "Capture"
+  },
+  "tabSummarize": {
+    "message": "Summarize"
+  },
+  "tabQA": {
+    "message": "Q&A"
+  },
+  "tabMedia": {
+    "message": "Media"
+  },
+  "tabActivity": {
+    "message": "Activity"
+  },
+  "statusOnline": {
+    "message": "Online"
+  },
+  "statusOffline": {
+    "message": "Offline"
+  },
+  "statusSyncing": {
+    "message": "Syncing..."
+  },
+  "statusSynced": {
+    "message": "Synced"
+  },
+  "statusPending": {
+    "message": "Sync pending"
+  },
+  "statusFailed": {
+    "message": "Sync failed"
+  },
+  "translationPlaceholder": {
+    "message": "Select text on any page and press $SHORTCUT$ to translate and save.",
+    "placeholders": {
+      "shortcut": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorGeneric": {
+    "message": "An error occurred. Please try again."
+  },
+  "errorNetwork": {
+    "message": "Network error. Please check your connection."
+  },
+  "errorAuth": {
+    "message": "Authentication failed. Please log in again."
+  },
+  "errorTranslation": {
+    "message": "Translation failed. Please try again."
+  },
+  "successNoteSaved": {
+    "message": "Note saved successfully!"
+  },
+  "successSynced": {
+    "message": "Synced $COUNT$ items.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  }
+}
