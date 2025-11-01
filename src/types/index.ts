@@ -1,5 +1,4 @@
 // Extension-specific TypeScript types
-import type { NoteRecord } from "@repo/domain/notes";
 import type { Database } from "./supabase";
 
 export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
@@ -9,6 +8,7 @@ export type Tables<T extends keyof Database["public"]["Tables"]> =
   Database["public"]["Tables"][T]["Row"];
 
 // Core entity types
+export type Note = Tables<"learning_notes">;
 export type Flashcard = Tables<"flashcards">;
 export type FlashcardDeck = Tables<"flashcard_decks">;
 export type User = Tables<"users">;
@@ -18,7 +18,7 @@ export type UserPreferences = Tables<"user_preferences">;
 export type SyncStatus = "pending" | "synced" | "failed";
 
 // Cached entity types (with sync metadata)
-export interface CachedNote extends NoteRecord {
+export interface CachedNote extends Note {
   syncStatus: SyncStatus;
   lastAccessedAt: number;
 }

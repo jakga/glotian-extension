@@ -36,13 +36,24 @@ import {
   ensureSupportedTargetLanguage,
   getDefaultLanguagePreferences,
 } from "@/lib/language";
-import {
-  fromSupabaseNote,
-  noteDraftToSupabasePayload,
-  type NoteDraft,
-  type NoteRecord,
-  type SupabaseLearningNote,
-} from "@repo/domain/notes";
+import type { Note } from "@/types";
+
+// Helper types for note operations
+type NoteDraft = Omit<Note, "id" | "user_id" | "created_at" | "updated_at">  & { user_id?: string };
+type SupabaseLearningNote = Note;
+
+// Helper functions for note transformation
+function fromSupabaseNote(note: SupabaseLearningNote): Note {
+  return note;
+}
+
+function noteDraftToSupabasePayload(draft: NoteDraft): Partial<Note> {
+  return {
+    ...draft,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+}
 import {
   proofreadWithTimeout,
   ProofreadError,

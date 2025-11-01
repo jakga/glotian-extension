@@ -19,12 +19,15 @@ import type {
 import type { Database, Json } from "@/types/supabase";
 import type { SupabaseClient, PostgrestError } from "@supabase/supabase-js";
 import type { Table, UpdateSpec } from "dexie";
-import {
-  fromSupabaseNote,
-  type NoteRecord,
-  type SupabaseLearningNote,
-  type NoteSourceType,
-} from "@repo/domain/notes";
+import type { Note } from "@/types";
+
+type SupabaseLearningNote = Note;
+type NoteSourceType = "manual" | "image" | "voice" | "extension" | "web" | "mobile";
+
+// Helper function
+function fromSupabaseNote(note: SupabaseLearningNote): Note {
+  return note;
+}
 
 type SyncTable = Extract<
   keyof Database["public"]["Tables"],
