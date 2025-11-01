@@ -4,27 +4,26 @@
 [![Chrome Built-in AI](https://img.shields.io/badge/Chrome-Built--in%20AI-4285F4?logo=googlechrome)](https://developer.chrome.com/docs/ai/built-in)
 [![Google Chrome AI Challenge 2025](https://img.shields.io/badge/Hackathon-Google%20Chrome%20AI%202025-00897B)](https://googlechromeai2025.devpost.com)
 
-> **Transform your web browsing into personalized language learning with AI-powered translation, flashcards, and spaced repetition—all on-device and privacy-first.**
+> **Transform your web browsing into personalized language learning with AI-powered translation and summarization—all on-device and privacy-first.**
 
 Built for the [Google Chrome Built-in AI Challenge 2025](https://googlechromeai2025.devpost.com).
 
 ## 🎯 What is Glotian?
 
-Glotian turns every translation you make while browsing the web into a personalized learning opportunity. No more forgetting words you looked up—Glotian captures, organizes, and helps you learn vocabulary from real-world contexts.
+Glotian turns every translation you make while browsing the web into a personalized learning opportunity. No more forgetting words you looked up—Glotian captures, organizes, and helps you build vocabulary from real-world contexts.
 
 **Key Features**:
 - ⚡ **Sub-second translation** (<1.2s) using Chrome's on-device AI
-- 🔒 **Privacy-first**: 90%+ of AI operations run locally
-- 📴 **Offline-first**: Full functionality without internet
-- 🧠 **AI flashcards**: Automatic vocabulary extraction with spaced repetition
 - 📝 **Page summarization**: Extract key points and simplify to your reading level
-- ✍️ **Writing coach**: Grammar checking and tone adjustment
+- 🔒 **Privacy-first**: 90%+ of AI operations run locally
+- 📴 **Offline-first**: All translations saved locally, sync when online
+- 🏷️ **Auto-tagging**: AI suggests relevant tags for your notes
 
 ## 🚀 Quick Start (5 minutes)
 
 ### Prerequisites
 
-- **Chrome 120+** (Canary/Dev recommended for Built-in AI APIs)
+- **Chrome 138+** (stable release)
 - **Node.js 18+** and **npm** (or pnpm/yarn)
 - **Supabase account** (free tier works)
 
@@ -94,14 +93,7 @@ npm run build
 4. Get AI-generated summary in <2.5s
 5. Optionally simplify to your reading level (CEFR A1-C2)
 
-### 3. AI Flashcard Creation
-
-1. In side panel **"Translate"** tab, select 5+ saved notes
-2. Click "Create Deck from Selected"
-3. AI extracts key vocabulary with definitions and examples
-4. Study with spaced repetition algorithm
-
-### 4. Offline Mode
+### 3. Offline Mode
 
 - All translations/notes saved locally in IndexedDB
 - Works offline for reviewing saved content
@@ -113,8 +105,8 @@ npm run build
 
 - **Framework**: Chrome Extension Manifest V3 + TypeScript 5.9
 - **Build**: Vite + CRXJS (HMR support)
-- **AI**: Chrome Built-in AI (Translator, Summarizer, Prompt, Writer, Rewriter, Proofreader)
-- **Fallback**: OpenAI API + Gemini API (when on-device unavailable)
+- **AI**: Chrome Built-in AI (Translator, Summarizer, Prompt, Writer)
+- **Fallback**: Gemini API + OpenAI API (when on-device unavailable)
 - **Backend**: Supabase (PostgreSQL, Auth, Storage)
 - **Storage**: IndexedDB (Dexie.js) for offline-first sync
 - **Styling**: Tailwind CSS
@@ -125,10 +117,8 @@ npm run build
 |-----|-------|-------------|
 | **Translator API** | Primary translation engine | <1.2s (4x faster than cloud) |
 | **Summarizer API** | Page content summarization | <2.5s for 5,000 chars |
-| **Prompt API** | Auto-tagging, Q&A, OCR post-processing | <1.5s |
-| **Writer API** | Text simplification (CEFR levels) | <2s |
-| **Rewriter API** | Tone adjustment (formal/casual) | <1.8s |
-| **Proofreader API** | Grammar checking | <2s |
+| **Prompt API** | Auto-tagging with context awareness | <1.5s |
+| **Writer API** | Text simplification (CEFR A1-C2 levels) | <2s |
 
 ### Data Flow
 
@@ -138,7 +128,7 @@ User Action (text selection)
 Content Script captures text
     ↓
 Background Service Worker:
-  1. Translate with Chrome AI (or fallback to OpenAI/Gemini)
+  1. Translate with Chrome AI (or fallback to Gemini/OpenAI)
   2. Auto-tag with Prompt API
   3. Save to IndexedDB (syncStatus: pending)
   4. Enqueue for sync
@@ -233,8 +223,8 @@ VITE_SUPABASE_URL=https://xxx.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbG...
 
 # Optional (for fallback when Chrome AI unavailable)
-VITE_OPENAI_API_KEY=sk-...
 VITE_GEMINI_API_KEY=AIza...
+VITE_OPENAI_API_KEY=sk-...
 ```
 
 **Security Note**: For production, proxy API keys through Supabase Edge Functions to keep them out of client bundles.
@@ -243,10 +233,10 @@ VITE_GEMINI_API_KEY=AIza...
 
 ### "Chrome AI not working"
 
-1. **Check Chrome version**: Must be 120+ (Canary/Dev recommended)
+1. **Check Chrome version**: Must be 138+ (stable release)
 2. **Enable flags**: See "Enable Chrome Built-in AI" section above
 3. **Download model**: Check `chrome://components` → "Optimization Guide On Device Model"
-4. **Fallback**: Extension automatically falls back to OpenAI/Gemini if on-device unavailable
+4. **Fallback**: Extension automatically falls back to Gemini/OpenAI if on-device unavailable
 
 ### "Extension won't load"
 
@@ -267,10 +257,10 @@ VITE_GEMINI_API_KEY=AIza...
 
 ## 🚧 Roadmap
 
-- [x] MVP: Translation, summarization, flashcards, offline sync
+- [x] MVP: Translation, summarization, offline sync
+- [ ] AI flashcard generation with spaced repetition
 - [ ] Voice interaction (when Chrome Speech API available)
-- [ ] Collaborative learning (share flashcard decks)
-- [ ] Adaptive difficulty (CEFR level tracking)
+- [ ] Writing coach overlay (grammar checking, tone adjustment)
 - [ ] Browser history mining (suggest vocab from frequently visited sites)
 
 ## 🤝 Contributing
