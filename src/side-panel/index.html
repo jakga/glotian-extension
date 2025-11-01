@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Chrome Built-in AI Origin Trial tokens (writer family only) -->
+  <meta http-equiv="origin-trial" content="%VITE_ORIGIN_TRIAL_TOKEN_WRITER%">
+  <meta http-equiv="origin-trial" content="%VITE_ORIGIN_TRIAL_TOKEN_REWRITER%">
+  <meta http-equiv="origin-trial" content="%VITE_ORIGIN_TRIAL_TOKEN_PROOFREADER%">
+  <title>Glotian</title>
+  <link rel="stylesheet" href="../styles/globals.css">
+</head>
+<body class="antialiased">
+  <div id="app" class="flex flex-col h-screen" role="application" aria-label="Glotian Language Learning Extension">
+    <!-- Header with gradient background -->
+    <header class="bg-glotian-gradient px-4 py-3 flex items-center justify-between shadow-md" role="banner">
+      <h1 class="text-lg font-semibold text-white tracking-tight">Glotian</h1>
+      <div class="flex items-center gap-2">
+        <button id="header-settings-btn" class="text-white/90 hover:text-white transition-colors p-1" aria-label="Open settings" title="Settings">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </button>
+        <button id="header-login-btn" class="text-xs text-white/90 hover:text-white transition-colors px-2 py-1 rounded" aria-label="Log in to account">
+          Log In
+        </button>
+        <button id="header-logout-btn" class="text-xs text-white/90 hover:text-white transition-colors px-2 py-1 rounded hidden" aria-label="Log out from account">
+          Log Out
+        </button>
+      </div>
+    </header>
+
+    <!-- Auth Section (initially hidden) -->
+    <section id="auth-section" class="hidden m-4 p-4 card animate-fade-in" aria-live="polite">
+      <h2 class="text-lg font-semibold gradient-text mb-2">Log In to Glotian</h2>
+      <p class="text-sm text-glotian-text-secondary mb-4">
+        Use your Glotian account to sync captured notes across devices.
+      </p>
+      <form id="login-form" class="flex flex-col gap-3">
+        <div>
+          <label for="login-email" class="block text-xs font-semibold text-glotian-text-secondary mb-1">
+            Email
+          </label>
+          <input
+            id="login-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="input-base"
+          />
+        </div>
+        <div>
+          <label for="login-password" class="block text-xs font-semibold text-glotian-text-secondary mb-1">
+            Password
+          </label>
+          <input
+            id="login-password"
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            class="input-base"
+          />
+        </div>
+        <button id="login-submit" type="submit" class="btn-primary mt-2">
+          Log In
+        </button>
+      </form>
+      <p id="login-error" class="hidden mt-3 text-sm text-glotian-error" role="alert"></p>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-white border-b border-glotian-border flex overflow-x-auto" role="tablist" aria-label="Main navigation">
+      <button
+        class="tab flex-1 min-w-fit px-3 py-3 text-sm font-medium text-glotian-text-secondary border-b-2 border-transparent transition-all hover:text-glotian-primary hover:bg-glotian-primary/5 aria-selected:text-glotian-primary aria-selected:border-glotian-primary"
+        data-tab="translate"
+        role="tab"
+        aria-selected="true"
+        aria-controls="tab-translate"
+        id="tab-btn-translate"
+      >
+        Translate
+      </button>
+      <button
+        class="tab flex-1 min-w-fit px-3 py-3 text-sm font-medium text-glotian-text-secondary border-b-2 border-transparent transition-all hover:text-glotian-primary hover:bg-glotian-primary/5 aria-selected:text-glotian-primary aria-selected:border-glotian-primary"
+        data-tab="summarize"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tab-summarize"
+        id="tab-btn-summarize"
+      >
+        Summarize
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto bg-glotian-bg-light custom-scrollbar" role="main">
+      <!-- Translate Tab -->
+      <div id="tab-translate" class="tab-content p-4" role="tabpanel" aria-labelledby="tab-btn-translate">
+        <!-- Content will be injected by translate.ts -->
+      </div>
+
+      <!-- Summarize Tab -->
+      <div id="tab-summarize" class="tab-content p-4 hidden" role="tabpanel" aria-labelledby="tab-btn-summarize" hidden>
+        <!-- Summarize tab content will be injected by summarize.ts -->
+      </div>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="./index.ts"></script>
+</body>
+</html>
