@@ -32,7 +32,7 @@ Glotian turns every translation you make while browsing the web into a personali
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/YOUR_USERNAME/glotian-extension.git
+git clone https://github.com/jakga/glotian-extension.git
 cd glotian-extension
 
 # 2. Install dependencies
@@ -291,7 +291,7 @@ Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidel
 - **Hackathon Submission**: [Devpost](https://devpost.com/software/glotian)
 - **Chrome Built-in AI Docs**: https://developer.chrome.com/docs/ai/built-in
 - **Supabase**: https://supabase.com
-- **Report Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/glotian-extension/issues)
+- **Report Issues**: [GitHub Issues](https://github.com/jakga/glotian-extension/issues)
 
 ---
 
